@@ -4,4 +4,4 @@ time = 3
 
 Interest = (principal) * (rate) * (time)
 
-print(f"The simple Interest is: {Interest}")
+print(f"The simple Interest is: {Interest}") # Output: The simple Interest is: 150.0
