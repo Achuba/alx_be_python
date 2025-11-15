@@ -1,32 +1,28 @@
-task = input ("Enter your task:  ")
-priority = input ("Priority (high/medium/low): ") 
-time_bound = input ("Is it time-bound? (yes/no): ")
- 
-match priority:
-    case "high":
-        if time_bound == "yes":
-            time_bound_yes = (f"'Finish project report' is a {priority} task that requires immediate attention today!")
-            print (time_bound_yes)
-        else : 
-            time_bound_no = (f"Read a book' is a {priority} task. Consider completing it when you have free time.")
-            print (time_bound_no)
-    case "medium":
-        if time_bound == "yes":
-            time_bound_yes = (f"'Finish project report' is a {priority} task that requires immediate attention today!")
-            print (time_bound_yes)
-        else : 
-            time_bound_no = (f"Read a book' is a {priority} task. Consider completing it when you have free time.")
-            print (time_bound_no)
-    case "low":
-        if time_bound == "yes":
-            time_bound_yes = (f"'Finish project report' is a {priority} task that requires immediate attention today!")
-            print (time_bound_yes)
-        else : 
-            time_bound_no = (f"Read a book' is a {priority} task. Consider completing it when you have free time.")
-            print (time_bound_no)
-    case _:
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ")
+time_bound = input("Is it time-bound? (yes/no): ")
+
+run = True
+
+while run:
+    match priority.lower():
+        case "high":
+            reminder = f"Reminder: '{task}' is a high priority task"
+        case "medium":
+            reminder = f"Reminder: '{task}' is a medium priority task"
+        case "low":
+            reminder = f"Note: '{task}' is a low priority task"
+        case _:
+            reminder = "Unrecognized priority level."
+            print(reminder)
+            break 
     
-        priority_level = 4 
-        print ("Unrecognized priority level. Please use high, medium, or low.")
+    if time_bound.lower() == "yes":
+        reminder += " that requires immediate attention today!"
+    else:
+        reminder += ". Consider completing it when you have free time."
+ 
+    print(reminder)
 
-
+  
+    run = False
