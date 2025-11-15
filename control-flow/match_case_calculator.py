@@ -1,5 +1,5 @@
-num1 = int(input("Enter first number: ")) 
-num2 = int(input("Enter second number: "))
+num1 = input("Enter first number: ")
+num2 = input("Enter second number: ")
 operation = input ("Choose operation (+, -, *, /): ")
 match operation : 
     case "+":
@@ -17,4 +17,4 @@ match operation :
         else:
             print ("Error: Division by zero is not allowed.")
 
-    
+ 
