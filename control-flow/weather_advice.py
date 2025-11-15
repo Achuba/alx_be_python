@@ -10,3 +10,7 @@ elif weather == "cold":
     print("Make sure to wear a warm coat and a scarf.")
 else:
     print("Sorry, I don't have recommendations for this weather.")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1412ddf5bc5db57d704fb28c6e6d75d8b9ebf3c5
