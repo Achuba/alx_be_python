@@ -1,4 +1,5 @@
 from arithmetic_operations import perform_operation
+from shopping_list_manager import main
 
 def main():
     print("Arithmetic Operations")
@@ -11,3 +12,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+    
