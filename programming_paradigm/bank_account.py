@@ -9,10 +9,10 @@ class BankAccount:
         
     def withdraw(self, amount):
         if amount > self.__account_balance:
-            raise ValueError("Insurficient funds")
+            return False
         self.__account_balance -= amount
-        return self.__account_balance
+        return True
             
     def display_balance(self) :
-        print(f"Current Balance: ${self.__account_balance}")
+        print(f"Current Balance: ${self.__account_balance:.2f}")
 
