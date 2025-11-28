@@ -1,0 +1,61 @@
+class Book:
+    def __init__(self, title, author, is_checked_out=False):
+        self.title = title           
+        self.author = author          
+        self.__is_checked_out = is_checked_out  
+
+    
+    def is_checked_out(self):
+        return self.__is_checked_out
+
+   
+    def check_out(self):
+        if not self.__is_checked_out:
+            self.__is_checked_out = True
+            return True
+        return False  
+
+   
+    def return_book(self):
+        if self.__is_checked_out:
+            self.__is_checked_out = False
+            return True
+        return False  
+
+   
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+
+class Library:
+    def __init__(self):
+        self.__books = []  
+    
+    def add_book(self, book):
+        if isinstance(book, Book):
+            self.__books.append(book)
+        else:
+            raise TypeError("Only Book instances can be added.")
+
+    
+    def check_out_book(self, title):
+        for book in self.__books:
+            if book.title == title:
+                book.check_out()
+                return
+        
+
+    
+    def return_book(self, title):
+        for book in self.__books:
+            if book.title == title:
+                book.return_book()
+                return
+        
+
+    
+    def list_available_books(self):
+        available_books = [book for book in self.__books if not book.is_checked_out()]
+        for book in available_books:
+            print(book)
+
